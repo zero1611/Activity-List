@@ -7,7 +7,7 @@ const txtImput = document.querySelector('.new-todo');
 const btnBorrar = document.querySelector('.clear-completed');
 const ulFiltros = document.querySelector('.filters');
 const anchorFiltros = document.querySelectorAll('.filtro');
-const contadorPendientes = document.querySelector('.todo-count')
+const contadorPendientes = document.querySelector('.todo-count');
 let contadorP = 0;
 export const crearTodoHtml = (todo) => {
     const htmlTodo =
@@ -18,7 +18,7 @@ export const crearTodoHtml = (todo) => {
         <button class="destroy"></button>
     </div>
     <input class="edit" value="Create a TodoMVC template">
-</li> `
+</li> `;
     const div = document.createElement('div');
     div.innerHTML = htmlTodo;
 
@@ -26,16 +26,16 @@ export const crearTodoHtml = (todo) => {
 
     return div.firstElementChild;
 
-}
+};
 txtImput.addEventListener('keyup', (event) => {
     if (event.keyCode === 13 && txtImput.value.length > 0) {
-        const nuevoTodo = new Todo(txtImput.value)
+        const nuevoTodo = new Todo(txtImput.value);
         todoList.nuevoTodo(nuevoTodo);
         crearTodoHtml(nuevoTodo);
         txtImput.value = '';
         contar();
     }
-})
+});
 divTodoList.addEventListener('click', (event) => {
 
     const nombreElemento = event.target.localName;
